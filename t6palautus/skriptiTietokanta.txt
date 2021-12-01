@@ -1,0 +1,27 @@
+
+CREATE TABLE urheilijat (
+ id INT(6) NOT NULL AUTO_INCREMENT,
+ nimi VARCHAR(20),
+ sukunimi VARCHAR(20),
+ kutsumanimi VARCHAR(20),
+ syntymavuosi DATE,
+ laji VARCHAR(20),
+ paino INT(6),
+ saavutukset TEXT,
+ kuva TEXT,
+ PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=5;
+
+INSERT INTO urheilijat VALUES (123, 'Paavo', 'Nurmi', 'Nurmi', '1897-01-01', 'Yleisurheilu', 60, 'Aika paljon kaikkee, itse asiassa', 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Paavo_Nurmi_%28Antwerp_1920%29.jpg'),
+(243, 'Niilo', 'Halonen', 'Halogeeni', '1905-01-01', 'Ampumahiihto', 50, 'Aika paljon kaikkee, itse asiassa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Niilo-Halonen-1965.jpg/500px-Niilo-Halonen-1965.jpg'),
+(245, 'Ove', 'Andersen', 'Hans', '1936-01-01', 'Hiihto', 60, 'Aika paljon kaikkee, itse asiassa', 'https://upload.wikimedia.org/wikipedia/commons/3/34/Ove_Andersen_1928.jpg'),
+(836, 'Timo', 'Jutila', 'Timppa', '1923-01-01', 'Jaakiekko', 80, 'Aika paljon kaikkee, itse asiassa', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Timo_Jutila.jpg/500px-Timo_Jutila.jpg'),
+(548, 'Paavo', 'Nurmi', 'Nurmikko', '1688-01-01', '4000m', 40, 'Aika paljon kaikkee, itse asiassa', 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Paavo_Nurmi_%28Antwerp_1920%29.jpg')
+
+CREATE OR REPLACE USER 'kt'@'localhost' IDENTIFIED BY 'kt123456';       
+GRANT SELECT, INSERT, UPDATE, DELETE ON urheilijat TO 'kt'@'localhost'; 
+
+#https://fi.wikipedia.org/wiki/Paavo_Nurmi
+#https://fi.wikipedia.org/wiki/Niilo_Halonen
+#https://fi.wikipedia.org/wiki/Ove_Andersen
+#https://fi.wikipedia.org/wiki/Timo_Jutila
